@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -19,12 +15,19 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "outDir": "dist/public"
+    "outDir": "dist/public",
+    "baseUrl": "./src/frontend",
+    "paths": {
+      "@core/*": ["components/core/*"],
+      "@page/*": ["components/page/*"],
+      "@part/*": ["components/part/*"],
+      "@context/*": ["context/*"],
+      "@service/*": ["service/*"],
+      "@theme/*": ["theme/*"],
+      "@frontend-config/*": ["config/*"],
+      "@frontend-utils/*": ["utils/*"]
+    }
   },
-  "include": [
-    "./src/frontend"
-  ],
-  "exclude": [
-    "./src/**/*"
-  ]
+  "include": ["./src/frontend/**/*"],
+  "exclude": ["./src/backend/**/*"]
 }
